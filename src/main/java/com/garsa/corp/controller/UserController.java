@@ -39,7 +39,7 @@ public class UserController {
     public String deleteById(@PathVariable("id") Long id){
         boolean ok = this.userService.deleteUser(id);
         if(ok){
-            return "User "+id+" has been deleted";
+            return "The user "+id+" has been deleted";
         }
         else {
             return "User "+id+" has not been deleted";
