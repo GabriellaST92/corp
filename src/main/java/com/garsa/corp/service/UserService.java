@@ -23,11 +23,11 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public Optional<UserModel> findById(Long id){
+    public Optional<UserModel> getById(Long id){
         return userRepository.findById(id);
     }
 
-    public ArrayList<UserModel> findByPriority(Integer priority){
+    public ArrayList<UserModel> getByPriority(Integer priority){
         return userRepository.findByPriority(priority);
     }
 

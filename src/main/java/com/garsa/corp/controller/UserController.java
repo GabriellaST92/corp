@@ -24,18 +24,18 @@ public class UserController {
         return this.userService.saveUser(user);
     }
 
-    @GetMapping(path = "/id")
+    @GetMapping(path = "/{id}")
     public Optional<UserModel> getUserById(@PathVariable("id") Long id){
-        return this.userService.findById(id);
+        return this.userService.getById(id);
     }
 
     @GetMapping(path = "/query")
     public ArrayList<UserModel> getByPriority(@RequestParam("priority")Integer priority){
-        return this.userService.findByPriority(priority);
+        return this.userService.getByPriority(priority);
 
     }
 
-    @DeleteMapping(path = "/id")
+    @DeleteMapping(path = "/{id}")
     public String deleteById(@PathVariable("id") Long id){
         boolean ok = this.userService.deleteUser(id);
         if(ok){
